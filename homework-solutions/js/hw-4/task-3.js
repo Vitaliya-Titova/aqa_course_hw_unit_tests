@@ -6,11 +6,13 @@
   преобразовываясь в number
 
 */
-  let minAge = '18';
-  let maxAge = '60';
-  let age = NaN; //null false true '' str NaN >>(Technical work) 0 '2'
+  let minAge = 18;
+  let maxAge = 60;
+  let age = 'b123'; 
+  age = +age;
+  let age_num = isNaN(age);
 
-  if ( typeof age != 'number' || typeof +age != 'number' ){
+  if (age_num){
     console.log("Incorrect data type")
   }
     else if (age < minAge){
@@ -22,4 +24,5 @@
       else if (age > maxAge){
         console.log("Keep calm and look Culture channel")
   }
-        else (console.log("Technical work"));
+        else console.log("Technical work");
+        
