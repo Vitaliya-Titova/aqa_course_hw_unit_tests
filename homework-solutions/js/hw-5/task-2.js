@@ -32,6 +32,7 @@ for (let i = 1; i<=100; i++){
         fizzBuzzResult = fizzBuzzResult + `${i}\n`
      }
    }
-   console.log(`${fizzBuzzResult.slice(0, -1)}`);
+   fizzBuzzResult = fizzBuzzResult.slice(0, -1);
+   console.log(fizzBuzzResult);
 
 export { fizzBuzzResult }; 

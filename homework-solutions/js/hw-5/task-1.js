@@ -25,7 +25,6 @@ for (let i = 10; i>= 0; i--){
 console.log(evenNumbersResult.slice(0,-1));
 */
 
-
 /**
  * Создать строку из 5 строк с увеличивающимся количеством смайликов ":)".
  * Переменная для результата `smilePatternResult` уже создана и содержит пустую строку.
@@ -40,8 +39,16 @@ console.log(evenNumbersResult.slice(0,-1));
 let smilePatternResult = '';
 let smileValue= ":)";
 let concatSmileValue = '';
+//вар1
+for (let i = 1; i <= 5; i++) {
+  concatSmileValue = concatSmileValue + smileValue;
+  smilePatternResult = smilePatternResult + concatSmileValue + "\n";
+}
+smilePatternResult = smilePatternResult.slice(0,-1);
+console.log(smilePatternResult);
 
-for (let i = 1; i<=5; i++){
+//вар2
+/* for (let i = 1; i<=5; i++){
   for (let j = 1; j <=1; j++){
     concatSmileValue = smileValue + concatSmileValue 
       } 
@@ -51,14 +58,23 @@ for (let i = 1; i<=5; i++){
  }
 }
 console.log(smilePatternResult);
+*/
 
-/*вар 2 - эксперимент с repeat >> method returns a string with a number of copies of a string
+/*вар 3 - эксперимент с repeat >> method returns a string with a number of copies of a string
 for (let i = 1; i<=5; i++){
   if (i<=4){
     smilePatternResult += smileValue.repeat(i) +'\n';
 } else {smilePatternResult += smileValue.repeat(i)}
 }
 console.log(smilePatternResult)
+*/
+
+/*вар 4 эксперимент с тернарным
+for (let i = 1; i<=5; i++){
+  concatSmileValue = concatSmileValue + smileValue 
+  smilePatternResult += (i === 5) ? concatSmileValue : concatSmileValue + "\n"
+}
+console.log(smilePatternResult);
 */
 
 /**
