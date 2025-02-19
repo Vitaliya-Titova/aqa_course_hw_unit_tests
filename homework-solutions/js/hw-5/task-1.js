@@ -14,7 +14,17 @@ if ( i === 0 ) {
   evenNumbersResult = evenNumbersResult + 0 
 } 
 };
-console.log(evenNumbersResult);
+console.log(evenNumbersResult); 
+
+/* 2й вариант со slice
+for (let i = 10; i>= 0; i--){
+  if (i % 2 === 0){
+    evenNumbersResult = evenNumbersResult + i + '-'
+      }
+};
+console.log(evenNumbersResult.slice(0,-1));
+*/
+
 
 /**
  * Создать строку из 5 строк с увеличивающимся количеством смайликов ":)".
