@@ -4,7 +4,7 @@
  * Ожидаемый результат для `hello`: "hello contains 2 vowels and 3 consonants".
  */
 
-const word = 'HEL-LO';
+const word = 'hello';
 const letterVowels = 'aeiouy';
 const letterConsonants = 'bcdfghjklmnpqrstvwxyz';
 let vowels = 0;
