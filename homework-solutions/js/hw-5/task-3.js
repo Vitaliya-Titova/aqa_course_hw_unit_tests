@@ -3,7 +3,7 @@
  * Переменная `word` уже создана и содержит строку со словом.
  * Ожидаемый результат для `hello`: "hello contains 2 vowels and 3 consonants".
  */
-const word = 'He-llo';
+const word = 'hello';
 const letterVowels = 'aeiouyAEIOUY';
 const letterConsonants = 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ'
 let vowels=0;
