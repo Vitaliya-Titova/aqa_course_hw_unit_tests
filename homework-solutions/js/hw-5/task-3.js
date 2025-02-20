@@ -6,9 +6,9 @@
 const word = 'hello';
 const letterVowels = 'aeiouyAEIOUY';
 const letterConsonants = 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ'
-let vowels=0;
-let consonants=0;
-let noLetter ='0'
+let vowels = 0;
+let consonants = 0;
+let noLetter = 0;
 let vowelsAndConsonantsResult = '';
 
 for (let i = 0; i < word.length; i++){
