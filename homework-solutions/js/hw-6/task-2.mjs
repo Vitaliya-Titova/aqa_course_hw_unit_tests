@@ -25,9 +25,9 @@ for (let i = 0; i < competitorPizzas.length; i++) {
     resultNull = null;
   }
 }
-for (let element of competitorPizzas) {
-  if (myPizzasT2[element] && !competitorPizzas[element].toLowerCase().includes(myPizzasT2[element].toLowerCase())) {
-    resultUnique.push(myPizzasT2[element].toLowerCase());
+for (let i = 0; i < competitorPizzas.length; i++) {
+  if (myPizzasT2[i] && !competitorPizzas[i].toLowerCase().includes(myPizzasT2[i].toLowerCase())) {
+    resultUnique.push(myPizzasT2[i].toLowerCase());
   }
   if (!resultUnique.length) {
     resultNull = null;
