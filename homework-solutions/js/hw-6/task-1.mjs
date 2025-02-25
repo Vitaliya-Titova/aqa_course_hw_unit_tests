@@ -6,8 +6,21 @@
     если элемент нечетный - возведет его в 3ю степень
 
   Значение добавьте в массив 'forOf' 
+    for (элемент of итерируемый_объект) {
+    // тело цикла for of
+} для каждого элемента в итерируемом объекте выполнить тело цикла.
+
 */
 const forOf = [];
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+for (let element of arr) {
+  if (element % 2 === 0) {
+    element = Math.pow(element, 2);
+  } else element = Math.pow(element, 3);
+  forOf.push(element);
+}
+console.log(forOf);
 
 /*
 2. Методы массивов
@@ -19,8 +32,23 @@ const forOf = [];
 
   В результате вы должны получить массив [0, 1, 3, 4, 5], присвойте в переменную "result"
 */
+const arr2 = [1, 2, 3, 4, 5];
 
-let result;
+arr2.push(6); // - Добавьте в конец массива число 6
+console.log(arr2);
+
+arr2.unshift(0); //  - Добавьте в начало массива число 0
+console.log(arr2);
+
+console.log(arr2[2]);
+arr2.splice(2, 1); // Удалите элемент с индексом 2
+console.log(arr2);
+
+arr2.pop(); //Удалите последний элемент из массива
+console.log(arr2);
+
+let result = [...arr2];
+console.log(result);
 
 /*
 3. Деструктуризация массивов
@@ -29,6 +57,13 @@ let result;
 
   Пример: [1,2,3,4,5] => first === 1; second === 2, rest === [3,4,5]
 */
+const arr3 = [3, 11, 32, 7, 20];
+const [first, second, ...rest] = arr3;
+
+console.log(first);
+console.log(second);
+console.log(rest);
+//console.log(typeof first);
 
 /*
 4. Конкатенация массивов
@@ -38,5 +73,11 @@ let result;
 
   Создайте переменную mergedArray, который будет хранить значения из массивов 1 и 2
 */
+const arr4 = [1, 2, 3, 4, 5];
+const arr5 = [6, 7, 8, 9, 10];
+const mergedArray = [...arr4, ...arr5];
+
+console.log(mergedArray);
+
 
 export { forOf, result, first, second, rest, mergedArray };
