@@ -32,20 +32,14 @@ function findLongestWords(sentence) {
   const arrResult = [];
 
   // проверка на no-string и пустую строку
-  if (typeof sentence !== 'string') {
-    return arrResult;
-  } else if (sentence === '') {
+  if (typeof sentence !== 'string' || sentence === '') {
     return arrResult;
   }
 
   const arrSentence = sentence.trim().split(' ');
 
-  // сортировка массива по убыванию
-  arrSentence.sort(function sortArray(a, b) {
-    if (a.length > b.length) return -1;
-    if (a.length < b.length) return 1;
-    return 0;
-  });
+  // сортировка массива по убыванию по длине слова
+  arrSentence.sort((a, b) => b.length - a.length);
 
   for (let i = 0; i < arrSentence.length; i++) {
     if (!arrResult.length) {
@@ -60,7 +54,6 @@ function findLongestWords(sentence) {
   }
   return arrResult;
 }
-console.log(findLongestWords(' Bugfixes software always breaks fast     '));
+console.log(findLongestWords(' Bugfixes software    always breaks fast     '));
 
 export { isPalindrom, findLongestWords };
-
