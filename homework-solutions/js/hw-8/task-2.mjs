@@ -26,7 +26,9 @@ function countVowels(word) {
   const letterVowels = 'aeiouy';
   let arrLetter = word.split('');
   const counter = arrLetter.reduce((accumulator, letter) => {
-    letterVowels.includes(letter) ? accumulator++ : false;
+    if (letterVowels.includes(letter)) {
+      accumulator++;
+    }
     return accumulator;
   }, 0);
   return counter;
