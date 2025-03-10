@@ -22,8 +22,7 @@ function getObjValues(user, arr) {
 }
 console.log(getObjValues(user, ['name', 'age'])); // { name: 'a', age: 2 }
 
-2;
-/**
+/**2
  * Create a function strCount (takes an object as argument)
  * that will count all string values inside an object. For example:
  */
@@ -43,6 +42,7 @@ strCount = {
   },
 };
 //returns 8
+
 let count = 0;
 function strCountinObject(strCount) {
   let newArr = Object.values(strCount).flat(Infinity);
@@ -59,8 +59,7 @@ function strCountinObject(strCount) {
 }
 console.log(strCountinObject(strCount));
 
-3;
-/*
+/* 3
  * The function giveMeFive accepts 1 parameter, obj, which is an object.
  * Create an array (which you will eventually return).
  * Then, traverse obj, checking each key and value.
@@ -68,11 +67,13 @@ console.log(strCountinObject(strCount));
  * Separately, if the length of the value is equal to 5, then push the value to your array.
  * At the end, return your array.
  */
+
 function giveMeFive(obj) {
   return Object.entries(obj)
     .flat(Infinity)
     .filter((element) => element.length === 5);
 }
+
 console.log(giveMeFive({ Our: 'earth', is: 'a', beautyful: 'world' })); // ["earth","world"]
 console.log(giveMeFive({ Ihave: 'enough', money: 'to', buy: 'a', car: 'model' })); // ["Ihave","money","model"]
 console.log(giveMeFive({ Pears: 'than', apple: 'sweet' })); //["Pears","apple","sweet"])
