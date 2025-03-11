@@ -45,11 +45,11 @@ function updateCharacter(name, newCharacter) {
   const { name: firstname, age: years } = newCharacter;
   const findCharacter = getCharacter(name);
 
-  findCharacter.name = firstname ?? characters.name;
-  findCharacter.age = years ?? characters.age;
+  findCharacter.name = firstname ?? findCharacter.name;
+  findCharacter.age = years ?? findCharacter.age;
   return findCharacter;
 }
-updateCharacter('Jack', { name: 'New_name', age: 5 });
+updateCharacter('Jack', { name: 'New_name', age: null });
 
 // 5. Напишите функцию для удаления персонажа removeCharacter(name)
 // (Реализовать через splice, индекс персонажа искать методом findInxex)
