@@ -51,7 +51,7 @@ function strCountinObject(strCount) {
   for (element of newArr) {
     if (typeof element === 'string') {
       count++;
-    } else if (typeof element === 'object') {
+    } else if (typeof element === 'object' && element !== null) {
       strCountinObject(element);
     }
   }

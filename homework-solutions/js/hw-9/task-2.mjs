@@ -42,9 +42,11 @@ console.log(getCharactersByAge(40));
 //4. Напишите функцию updateCharacter(name, newCharacter).
 //(Методом getCharacter(name) получаем ссыклку на нужного персонажа, а потом меняем ему данные)
 function updateCharacter(name, newCharacter) {
+  const { name: firstname, age: years } = newCharacter;
   const findCharacter = getCharacter(name);
-  findCharacter.name = newCharacter.name;
-  findCharacter.age = newCharacter.age;
+
+  findCharacter.name = firstname ?? characters.name;
+  findCharacter.age = years ?? characters.age;
   return findCharacter;
 }
 updateCharacter('Jack', { name: 'New_name', age: 5 });
@@ -57,7 +59,7 @@ function removeCharacter(name) {
     return characters.splice(indexCharacter, 1);
   } else throw new Error('Existing Name is required');
 }
-removeCharacter('New_name');
+removeCharacter('Fred');
 console.log(characters);
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
