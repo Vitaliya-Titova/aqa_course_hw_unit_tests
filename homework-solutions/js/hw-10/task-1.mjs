@@ -36,10 +36,10 @@ let callResult = qa.getInfo.call(anotherQa, 'Hi');
 console.log(callResult);
 
 // Используйте apply с greetingWord "Hey"
-
 let applyResult = qa.getInfo.call(anotherQa, ['Hey']);
 console.log(applyResult);
 /*
+
  3. Closures
   - Создайте функцию createCounter(),
   - Создайте в функции createCounter переменную count, которая будет равна 0
@@ -49,11 +49,26 @@ console.log(applyResult);
   - Создайте переменную functionCallCounter, в которой будет лежать результат createCounter()
   - Вызовите functionCallCounter() 5 раз, убедитесь что в консоли верно выводятся данные
 */
-
+//var1
 function createCounter() {
-  // Ваш код
+  let count = 0;
+  return () => {
+    count++;
+    console.log(`Function was called ${count} times`);
+    return count;
+  };
 }
-
 const functionCallCounter = createCounter();
+
+//var2;
+function createCounter2() {
+  let count2 = 0;
+  return function newFunctioun() {
+    count2++;
+    console.log(`Function was called ${count2} times`);
+    return count2;
+  };
+}
+const functionCallCounter2 = createCounter2();
 
 export { qa, bindResult, callResult, applyResult, functionCallCounter, anotherQa };

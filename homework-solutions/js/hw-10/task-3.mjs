@@ -10,17 +10,65 @@
   Рекоммендации:
    - Для генерации числа в границах воспользуйтесь методом:
       function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-      }
+        return Math.random() * (max - min) + min;  }*/
 
-*/
-
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+function getRandomArbitrary(max, min = 1) {
+  return Math.round(Math.random() * (max - min) + min);
 }
-
+//var1 Closures
 function uniqueRandomGenerator(n) {
-  // Ваш код
+  let resArr = [];
+  let getrandomFun = getRandomArbitrary(n);
+
+  return () => {
+    if (n === 0 || typeof n !== 'number') {
+      return 'All numbers were received';
+    }
+
+    if (resArr.length === n) {
+      return 'All numbers were received';
+    }
+
+    while (resArr.includes(getrandomFun)) {
+      getrandomFun = getRandomArbitrary(n);
+    }
+    resArr.push(getrandomFun);
+    return getrandomFun;
+  };
 }
+
+const func = uniqueRandomGenerator(3);
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+console.log(func());
+
+//var 2
+function uniqueRandomGenerator2(n) {
+  if (n === 0 || typeof n !== 'number') {
+    return 'All numbers were received';
+  }
+
+  let getrandomFun2 = getRandomArbitrary(n);
+
+  let resArr = [];
+
+  while (resArr.length !== n) {
+    if (resArr.includes(getrandomFun2)) {
+      getrandomFun2 = getRandomArbitrary(n);
+    } else {
+      resArr.push(getrandomFun2);
+      console.log(getrandomFun2);
+    }
+  }
+  return 'All numbers were received';
+}
+
+const randomGenerator = uniqueRandomGenerator2(5);
+console.log(randomGenerator);
+console.log(randomGenerator);
+console.log(randomGenerator);
 
 export { uniqueRandomGenerator };
