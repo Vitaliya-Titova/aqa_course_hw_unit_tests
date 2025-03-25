@@ -1,7 +1,10 @@
 class Employee {
   #salary;
   constructor(firstName, lastName, profession, salary) {
-    (this.firstName = firstName), (this.lastName = lastName), (this.profession = profession), (this.#salary = salary);
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.profession = profession;
+    this.#salary = salary;
   }
 
   get firstName() {
@@ -40,9 +43,10 @@ class Employee {
     }
     this.#salary = salary;
   }
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
+  // get fullName() {
+  //   return `${this.firstName} ${this.lastName}`;
+  // }
+
   getFullName() {
     return `${this.firstName} ${this.lastName}`;
   }

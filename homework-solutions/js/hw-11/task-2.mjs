@@ -77,10 +77,11 @@ class Company {
   }
 
   getEmployeeIndex(firstName) {
-    if (!this.findEmployeeByName(firstName)) {
+    const resInd = this.#employees.findIndex((elem) => elem.firstName === firstName);
+    if (resInd === -1) {
       throw new Error(`Employee with firstName ${firstName} not found`);
     }
-    return this.#employees.findIndex((elem) => elem.firstName === firstName);
+    return resInd;
   }
 
   removeEmployee(firstName) {
