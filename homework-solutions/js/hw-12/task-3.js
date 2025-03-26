@@ -75,9 +75,7 @@ async function fetchData() {
     const albumsPhoto = albomUser.map((albom) => {
       const photo = photos.filter((photo) => photo.albumId === albom.id);
       //  console.log("photo_filter", photo);
-      const albumRes = `${albom.title} (${photo.length} photos)`;
-      // console.log("albumRes", albumRes);
-      return albumRes;
+      return `${albom.title} (${photo.length} photos)`;
     });
 
     return {
@@ -85,7 +83,7 @@ async function fetchData() {
       email: user.email,
       phone: user.phone,
       company: user.company.name,
-      alb: albumsPhoto,
+      albums: albumsPhoto,
     };
   });
   // console.log(userData);
