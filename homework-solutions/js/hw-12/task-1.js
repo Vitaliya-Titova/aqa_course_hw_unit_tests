@@ -20,11 +20,10 @@ function f() {
 }
 
 function delayTwoSeconds(callback) {
-  setTimeout(() => callback(), 2000);
+  setTimeout(callback, 2000);
 }
 
 delayTwoSeconds(() => f());
-
 
 //2
 const p1 = new Promise((res) => {
