@@ -24,7 +24,7 @@ abstract class Employee implements IPerson {
     public surname: string,
     public experienceYears: number,
   ) {
-   this.salary =  this.calculateSalary();
+    this.salary = this.calculateSalary();
   }
   public abstract calculateSalary(): number;
   public abstract getDetails(): string;
@@ -51,7 +51,7 @@ class Manager extends Employee {
     super(name, surname, experienceYears);
   }
   calculateSalary() {
-    return (this.salary = this.experienceYears * 500);
+    return this.experienceYears * 500;
   }
   getDetails() {
     return `My name is ${this.name} ${this.surname}, I am Manager with ${this.experienceYears} years of experience in ${this.prefered} and ${this.salary}$ salary`;
@@ -73,7 +73,7 @@ class Developer extends Employee {
     super(name, surname, experienceYears);
   }
   calculateSalary() {
-    return (this.salary = this.experienceYears * 1000);
+    return this.experienceYears * 1000;
   }
   getDetails() {
     return `My name is ${this.name} ${this.surname}, I am Developer with ${this.experienceYears} years of experience in ${this.programmingLanguage} and ${this.salary}$ salary`;
